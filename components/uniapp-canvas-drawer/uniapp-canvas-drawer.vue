@@ -10,7 +10,6 @@
 		props: {
 			painting: {
 				type: Object,
-				default: {view: []}
 			}
 		},
 		data() {
@@ -21,7 +20,7 @@
 				tempFileList: [],
 				isPainting: false,
 				ctx: null,
-				cache: {},
+				cache: Array(),
 			}
 		},
 		watch: {
@@ -37,7 +36,6 @@
 					} else {
 						if (newVal && newVal.mode !== 'same') {
 							// this.triggerEvent('getImage', {errMsg: 'canvasdrawer:samme params'})
-							console.log('canvasdrawer:samme params')
 							this.$emit('getImage', {errMsg: 'canvasdrawer:samme params'})
 						}
 					}
@@ -46,7 +44,6 @@
 		},
 		onReady() {
 			uni.removeStorageSync('canvasdrawer_pic_cache')
-			this.cache = uni.getStorageSync('canvasdrawer_pic_cache') || {}
 			this.ctx = uni.createCanvasContext('canvasdrawer', this)
 		},
 		methods: {
@@ -58,8 +55,6 @@
 				
 				this.width = width
 				this.height = height
-				console.log(this.width)
-				console.log(this.height)
 				
 				const inter = setInterval(() => {
 					if (this.ctx) {
@@ -77,7 +72,7 @@
 						imageList.push(this.getImageInfo(views[i].url))
 					}
 				}
-		
+
 				const loadTask = []
 				for (let i = 0; i < Math.ceil(imageList.length / 8); i++) {
 					loadTask.push(new Promise((resolve, reject) => {
@@ -103,7 +98,6 @@
 				const views = this.painting.views
 				
 				// const { tempFileList, painting: { views } } = this.$data
-				console.log(tempFileList)
 				for (let i = 0, imageIndex = 0; i < views.length; i++) {
 					if (views[i].type === 'image') {
 						this.drawImage({
@@ -118,7 +112,6 @@
 								content: '当前微信版本过低，无法使用 measureText 功能，请升级到最新微信版本后重试。'
 							})
 							// this.triggerEvent('getImage', {errMsg: 'canvasdrawer:version too low'})
-							console.log('canvasdrawer:version too low')
 							this.$emit('getImage', {errMsg: 'canvasdrawer:version too low'})
 							return
 						} else {
@@ -144,7 +137,6 @@
 			drawImage (params) {
 				this.ctx.save()
 				const { url, top = 0, left = 0, width = 0, height = 0, borderRadius = 0, deg = 0 } = params
-				
 				if (deg !== 0) {
 					this.ctx.translate(left + width/2, top + height/2)
 					this.ctx.rotate(deg * Math.PI / 180)
@@ -261,7 +253,6 @@
 										resolve(res.path)
 									} else {
 										// this.triggerEvent('getImage', {errMsg: 'canvasdrawer:download fail'})
-										console.log('canvasdrawer:download fail')
 										this.$emit('getImage', {errMsg: 'canvasdrawer:download fail'})
 										reject(new Error('getImageInfo fail'))
 									}
@@ -277,9 +268,7 @@
 			saveImageToLocal () {
 				// const { width, height } = this.data
 				const width = this.width
-				console.log(width)
 				const height = this.height
-				console.log(height)
 				uni.canvasToTempFilePath({
 					x: 0,
 					y: 0,
@@ -294,11 +283,9 @@
 							this.tempFileList = []
 							
 							// this.triggerEvent('getImage', {tempFilePath: res.tempFilePath, errMsg: 'canvasdrawer:ok'})
-							console.log('canvasdrawer:ok')
 							this.$emit('getImage', {tempFilePath: res.tempFilePath, errMsg: 'canvasdrawer:ok'})
 						} else {
 							// this.triggerEvent('getImage', {errMsg: 'canvasdrawer:fail'})
-							console.log('canvasdrawer:fail')
 							this.$emit('getImage', {errMsg: 'canvasdrawer:fail'})
 						}
 					}

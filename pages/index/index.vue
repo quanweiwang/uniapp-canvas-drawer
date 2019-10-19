@@ -41,7 +41,7 @@
 						},
 						{
 							type: 'image',
-							url: 'https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83epJEPdPqQVgv6D8bojGT4DrGXuEC4Oe0GXs5sMsN4GGpCegTUsBgL9SPJkN9UqC1s0iakjQpwd4h4A/132',
+							url: 'https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83erma73GwPeY6QhTwTlkMiaSICnA2aeW43Jv4N1fvuwRTYyxMIqVOBicKg4wBJjeCcU32uAIFf3b4mOQ/132',
 							top: 27.5,
 							left: 29,
 							width: 55,
@@ -57,7 +57,7 @@
 						},
 						{
 							type: 'text',
-							content: '您的好友【kuckboy】',
+							content: '您的好友【王独秀】',
 							fontSize: 16,
 							color: '#402D16',
 							textAlign: 'left',
@@ -84,7 +84,7 @@
 						},
 						{
 							type: 'image',
-							url: 'https://hybrid.xiaoying.tv/miniprogram/viva-ad/1/1531385433625.jpeg',
+							url: 'https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83erma73GwPeY6QhTwTlkMiaSICnA2aeW43Jv4N1fvuwRTYyxMIqVOBicKg4wBJjeCcU32uAIFf3b4mOQ/132',
 							top: 443,
 							left: 85,
 							width: 68,
@@ -153,7 +153,6 @@
 				})
 			},
 			eventGetImage(event) {
-				console.log(event.detail.__args__)
 				uni.hideLoading()
 				// const { tempFilePath, errMsg } = event.detail
 				const result = event.detail.__args__
