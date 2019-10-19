@@ -137,8 +137,8 @@
 							breakWord: true,
 							width: 125
 						}
-			        ]
-			    }
+					]
+				}
 			},
 			eventSave () {
 			    uni.saveImageToPhotosAlbum({
