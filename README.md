@@ -31,13 +31,13 @@ git clone https://github.com/quanweiwang/uniapp-canvas-drawer
 3、在 **pages.json** 使用页面注册组件
 ```json
 {
-"path": "pages/index/index",
-	"style": {
+  	"path": "pages/index/index",
+  	"style": {
 		"navigationBarTitleText": "uni-app",
 		"usingComponents": {
 			"canvasdrawer": "/components/uniapp-canvas-drawer/uniapp-canvas-drawer"
 		}
-	}
+  	}
 }
 ```
 4、在页面 `**.vue` 文件中加入如下代码
