@@ -42,7 +42,7 @@ git clone https://github.com/quanweiwang/uniapp-canvas-drawer
 ```
 4、在页面 `**.vue` 文件中加入如下代码
 ```objc
-<canvasdrawer painting="{{painting}}" bind:getImage="eventGetImage"/>
+<canvasdrawer :painting="painting" bind:getImage="eventGetImage"/>
 ```
 `painting` 是需要传入的 `json`。 `getImage` 方法是绘图完成之后的回调函数，在 `event.detail` 中返回绘制完成的图片地址。
 当前栗子中的 `painting` 简单展示一下。详细配置请看 [API]
