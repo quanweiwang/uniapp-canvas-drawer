@@ -214,8 +214,8 @@ git clone https://github.com/quanweiwang/uniapp-canvas-drawer
 绘制操作的时候最好 `锁住屏幕` ，例如在点击绘制的时候
 ```js
 uni.showLoading({
-	title: '绘制分享图片中',
-	mask: true
+    title: '绘制分享图片中',
+    mask: true
 })
 ```
 绘制完成之后
