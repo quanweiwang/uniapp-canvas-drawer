@@ -202,7 +202,13 @@ git clone https://github.com/quanweiwang/uniapp-canvas-drawer
 当前可以绘制3种类型的配置: `image`、`text`、`rect`。配置的属性基本上使用的都是 `css` 的驼峰名称，还是比较好理解的。 
 
 ##### image（图片）
-[![](https://img.wangquanwei.com/wp-content/uploads/2019/10/1571491779-C509C509-7570-4CBF-AF35-429ACD3882E6.jpeg)](https://img.wangquanwei.com/wp-content/uploads/2019/10/1571491779-C509C509-7570-4CBF-AF35-429ACD3882E6.jpeg)
+属性 | 含义 | 默认值 | 可选值
+---|---|---|---
+url | 绘制的图片地址，可以是本地图片，如：/images/1.jpeg | |
+top | 左上角距离画板顶部的距离
+left | 左上角距离画板左侧的距离
+width | 要画多宽 | 0
+height | 要画多高 | 0
 
 ##### text（文本）
 [![](https://img.wangquanwei.com/wp-content/uploads/2019/10/1571491829-A6CD7773-0577-4AF0-AC0A-E80BA92E0632.jpg)](https://img.wangquanwei.com/wp-content/uploads/2019/10/1571491829-A6CD7773-0577-4AF0-AC0A-E80BA92E0632.jpg)
