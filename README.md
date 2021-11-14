@@ -202,12 +202,38 @@ git clone https://github.com/quanweiwang/uniapp-canvas-drawer
 当前可以绘制3种类型的配置: `image`、`text`、`rect`。配置的属性基本上使用的都是 `css` 的驼峰名称，还是比较好理解的。 
 
 ##### image（图片）
-[![](https://img.wangquanwei.com/wp-content/uploads/2019/10/1571491779-C509C509-7570-4CBF-AF35-429ACD3882E6.jpeg)](https://img.wangquanwei.com/wp-content/uploads/2019/10/1571491779-C509C509-7570-4CBF-AF35-429ACD3882E6.jpeg)
+属性 | 含义 | 默认值 | 可选值
+---|---|---|---
+url | 绘制的图片地址，可以是本地图片，如：/images/1.jpeg | |
+top | 左上角距离画板顶部的距离
+left | 左上角距离画板左侧的距离
+width | 要画多宽 | 0
+height | 要画多高 | 0
 
 ##### text（文本）
-[![](https://img.wangquanwei.com/wp-content/uploads/2019/10/1571491829-A6CD7773-0577-4AF0-AC0A-E80BA92E0632.jpg)](https://img.wangquanwei.com/wp-content/uploads/2019/10/1571491829-A6CD7773-0577-4AF0-AC0A-E80BA92E0632.jpg)
+属性 | 含义 | 默认值 | 可选值
+---|---|---|---
+content | 绘制文本 | ''（空字符串） |
+color | 颜色 | black
+fontSize | 字体大小 | 16
+textAlign | 文字对齐方式 | left、center、right
+lineHeight | 行高，只有在多行文本中才有用 | 20	
+top | 文本左上角距离画板顶部的距离 | 0	
+left | 文本左上角距离画板左侧的距离 | 0	
+breakWord | 是否需要换行 | false | true
+MaxLineNumber | 最大行数，只有设置 breakWord: true ，当前属性才有效，超出行数内容的显示为... | 2	
+width | 和 MaxLineNumber 属性配套使用，width 就是达到换行的宽度		
+bolder | 是否加粗 | false | true
+textDecoration | 显示中划线、下划线效果 | none | underline（下划线）、line-through（中划线）
+
 ##### rect (矩形，线条)
-[![](https://img.wangquanwei.com/wp-content/uploads/2019/10/1571491861-8002F2FD-A8B4-4674-99F6-719A13F8711B.jpeg)](https://img.wangquanwei.com/wp-content/uploads/2019/10/1571491861-8002F2FD-A8B4-4674-99F6-719A13F8711B.jpeg)
+属性 | 含义 | 默认值 | 可选值
+---|---|---|---
+background | 背景颜色 | black	
+top | 左上角距离画板顶部的距离		
+left | 左上角距离画板左侧的距离		
+width | 要画多宽 | 0	
+height | 要画多高 | 0	
 
 #### Q&A
 ##### 1、最佳实践
