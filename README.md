@@ -216,7 +216,7 @@ height | 要画多高 | 0
 content | 绘制文本 | ''（空字符串） |
 color | 颜色 | black
 fontSize | 字体大小 | 16
-textAlign | 文字对齐方式 | left	center、right
+textAlign | 文字对齐方式 | left、center、right
 lineHeight | 行高，只有在多行文本中才有用 | 20	
 top | 文本左上角距离画板顶部的距离 | 0	
 left | 文本左上角距离画板左侧的距离 | 0	
