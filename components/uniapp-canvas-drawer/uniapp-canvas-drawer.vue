@@ -127,22 +127,19 @@
         }
         this.ctx.draw(false,(()=>{
           uni.setStorageSync('canvasdrawer_pic_cache', this.cache)
-          // const system = uni.getSystemInfoSync().system
-          // if (/ios/i.test(system)) {
-          //   this.saveImageToLocal()
-          // } else {
-          //   // 延迟保存图片，解决安卓生成图片错位bug。
-          //   setTimeout(() => {
-          //     this.saveImageToLocal()
-          //   }, 800)
-          // }
+          const system = uni.getSystemInfoSync().system
+          if (/ios/i.test(system)) {
+            this.saveImageToLocal()
+          } else {
+            // 延迟保存图片，解决安卓生成图片错位bug。
+            setTimeout(() => {
+              this.saveImageToLocal()
+            }, 800)
+          }
           setTimeout(() => {
             this.saveImageToLocal()
           }, 800)
         })())
-        // this.ctx.draw(false, () => {
-          
-        // })
       },
       drawImage(params) {
         this.ctx.save()
