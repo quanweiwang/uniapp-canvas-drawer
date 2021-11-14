@@ -332,6 +332,6 @@
 <style>
   .board {
     position: fixed;
-    top: 2000upx;
+    top: 2000rpx;
   }
 </style>
