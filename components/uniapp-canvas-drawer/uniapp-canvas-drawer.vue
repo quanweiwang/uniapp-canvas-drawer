@@ -37,7 +37,7 @@
             if (newVal && newVal.mode !== 'same') {
               // this.triggerEvent('getImage', {errMsg: 'canvasdrawer:samme params'})
               this.$emit('getImage', {
-                errMsg: 'canvasdrawer:samme params'
+                errMsg: 'canvasdrawer:same params'
               })
             }
           }
@@ -136,9 +136,6 @@
               this.saveImageToLocal()
             }, 800)
           }
-          setTimeout(() => {
-            this.saveImageToLocal()
-          }, 800)
         })())
       },
       drawImage(params) {
@@ -279,7 +276,7 @@
                   } else {
                     // this.triggerEvent('getImage', {errMsg: 'canvasdrawer:download fail'})
                     this.$emit('getImage', {
-                      errMsg: 'canvasdrawer:download fail'
+                      errMsg: 'canvasdrawer:download fail ' + url
                     })
                     reject(new Error('getImageInfo fail'))
                   }

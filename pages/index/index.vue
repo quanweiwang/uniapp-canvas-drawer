@@ -182,6 +182,9 @@
           // #endif
           this.painting = {}
         }
+				else {
+					console.log(errMsg)
+				}
       }
     }
   }
